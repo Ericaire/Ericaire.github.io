@@ -149,9 +149,9 @@ span.highlight {
 .vid-swap {
   position: relative;
   width: 100%;
-  max-width: 220px;
+  max-width: 240px;
   aspect-ratio: 832 / 480; /* matches the source clips */
-  margin: 0 auto;
+  margin: 0 12px 0 auto;   /* gap to the text column on the right */
   background: #000;
   border-radius: 6px;
   overflow: hidden;
@@ -178,8 +178,8 @@ span.highlight {
 /* ===== Research card: static thumbnail (teaser image / logo) ===== */
 .static-card {
   width: 100%;
-  max-width: 220px;
-  margin: 0 auto;
+  max-width: 240px;
+  margin: 0 12px 0 auto;
   border-radius: 6px;
   overflow: hidden;
   background: #fff;
@@ -191,28 +191,30 @@ span.highlight {
   display: block;
 }
 
-/* Logo cards: fix the aspect-ratio so the card has the same visual
-   footprint as the video card, then "contain" the logo inside the box.
-   Without this, a wide/short logo collapses the card to a thin band that
-   visually clashes with the (much taller) text column next to it. */
+/* Logo cards: KAT logo is 5.76:1 (very wide and short). Don't force an
+   aspect ratio (would leave huge dead whitespace), but enforce a modest
+   min-height so the card has visual weight comparable to the video and
+   teaser cards above it. */
 .static-card-logo {
-  aspect-ratio: 832 / 480;
-  padding: 14px;
+  min-height: 90px;
+  padding: 14px 18px;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 .static-card-logo img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
 /* ===== Mobile tweaks ===== */
 @media (max-width: 600px) {
   .vid-swap,
   .static-card {
-    max-width: 160px;
+    max-width: 180px;
   }
 }
