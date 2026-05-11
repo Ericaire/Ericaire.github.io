@@ -191,12 +191,21 @@ span.highlight {
   display: block;
 }
 
-/* Logos look better with padding on a white background. */
+/* Logo cards: fix the aspect-ratio so the card has the same visual
+   footprint as the video card, then "contain" the logo inside the box.
+   Without this, a wide/short logo collapses the card to a thin band that
+   visually clashes with the (much taller) text column next to it. */
 .static-card-logo {
+  aspect-ratio: 832 / 480;
   padding: 14px;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .static-card-logo img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
