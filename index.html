@@ -25,7 +25,7 @@
                 <p>
                   I am a third-year undergraduate at <a href="https://www.hqu.edu.cn/">Huaqiao University</a>, majoring in Artificial Intelligence (overall rank&nbsp;1/40, National Scholarship&nbsp;2024).
                   Since June&nbsp;2025, I have been a research intern at <a href="https://www.pku.edu.cn/">Peking University</a> with <a href="https://hesunpu.github.io/">Prof.&nbsp;He&nbsp;Sun</a> and <a href="https://wenzhengchen.github.io/">Prof.&nbsp;Wenzheng&nbsp;Chen</a>.
-                  I am also an Algorithm Research Intern at Kuaishou Technology's Foundation Model Center (Jan&nbsp;2026&ndash;present), contributing to the KAT-Coder agentic-LLM line.
+                  I am also an Algorithm Research Intern at Kuaishou Technology's Foundation Model Center (Jan&nbsp;2026&ndash;present), working on frontier agent algorithms (KAT-Coder line).
                 </p>
                 <p>
                   My research focuses on <strong>amortized inference for video inverse problems</strong>: distilling powerful but slow video diffusion priors into one-step, causal solvers that run at streaming speeds. I am broadly interested in generative models, world models, and the systems-level design that makes diffusion-based reconstruction practical for real-time deployment.
@@ -62,7 +62,7 @@
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
             <!-- ====== InstantViR (CVPR 2026 Highlight) ====== -->
-            <tr onmouseout="instantvir_stop()" onmouseover="instantvir_start()">
+            <tr onmouseout="instantvir_stop()" onmouseover="instantvir_start()" bgcolor="#ffffd0">
               <td style="padding:16px;width:25%;vertical-align:top">
                 <div class="vid-swap" id="instantvir_card">
                   <video id="instantvir_before" class="vid-swap-base"
@@ -117,7 +117,9 @@
                 <a href="https://arxiv.org/abs/2511.14208">arXiv</a>
                 <p></p>
                 <p>
-                  We distill a powerful bidirectional video diffusion teacher (Wan2.1) into a fast causal autoregressive student that maps degraded video directly to its restoration in a <strong>single forward pass</strong>, with no paired data and no iterative test-time optimization. A teacher-space regularized LeanVAE swap removes the latent-space bottleneck, yielding the first real-time (<strong>&gt;35&nbsp;FPS</strong>) diffusion-based solver for streaming inpainting, deblurring, and super-resolution&mdash;up to <strong>100&times;</strong> faster than iterative video-diffusion baselines. (Hover the clip to see measurement &rarr; reconstruction; both clips stay frame-aligned.)
+                  We distill a powerful bidirectional video diffusion teacher (Wan2.1) into a fast causal autoregressive student that maps degraded video directly to its restoration in a <strong>single forward pass</strong>, with no paired data and no iterative test-time optimization. A teacher-space regularized LeanVAE swap removes the latent-space bottleneck, yielding the first <strong>real-time</strong> diffusion-based solver for streaming inpainting, deblurring, and super-resolution&mdash;up to <strong>100&times;</strong> faster than iterative video-diffusion baselines.
+                  <br>
+                  (Hover the clip to see measurement &rarr; reconstruction.)
                 </p>
               </td>
             </tr>
@@ -126,7 +128,7 @@
             <tr>
               <td style="padding:16px;width:25%;vertical-align:top">
                 <div class="static-card">
-                  <img src="instantvir-pp-teaser.png" alt="Bridging Distillation Gaps teaser">
+                  <img src="pp-teaser.png" alt="Bridging Distillation Gaps teaser">
                 </div>
               </td>
               <td style="padding:8px;width:75%;vertical-align:top">
@@ -148,7 +150,7 @@
                   <strong>CAI</strong> (asymmetric 14B/1.3B causal initialization) prevents posterior-mean collapse;
                   <strong>BDC</strong> (Bridge Distillation across Compressed latent spaces) trains the student in a 4&times;-compressed Video DA-VAE space while routing teacher gradients through a training-time WanVAE bridge&mdash;full DMD supervision, zero inference overhead;
                   <strong>CLA</strong> (Cyclic Likelihood Annealing) tempers the posterior on a cosine schedule, recovering <strong>+4.5&nbsp;dB&nbsp;PSNR</strong> over fixed-weight baselines.
-                  Together they reach <strong>33.5&nbsp;FPS</strong> at 832&times;480 with state-of-the-art quality on inpainting, deblur, and 4&times; super-resolution. We also release a 346K-clip paired corpus.
+                  Together they reach <strong>33.5&nbsp;FPS</strong> at 832&times;480 with state-of-the-art quality on inpainting, deblur, and 4&times; super-resolution. We will also release a 346K-clip paired corpus.
                 </p>
               </td>
             </tr>
