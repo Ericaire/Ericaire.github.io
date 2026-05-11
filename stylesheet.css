@@ -140,3 +140,70 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+/* ===== Research card: hover-to-swap video pair ===== */
+/* Two videos stacked at the same place. Both autoplay/loop/muted in parallel,
+   so they stay frame-aligned naturally; the JS sync keeps them aligned even
+   under aggressive browser throttling. The "after" video is on top with
+   opacity 0 by default and fades in on hover. */
+.vid-swap {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 832 / 480; /* matches the source clips */
+  margin: 0 auto;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.vid-swap-base,
+.vid-swap-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vid-swap-over {
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+/* ===== Research card: static thumbnail (teaser image / logo) ===== */
+.static-card {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.static-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Logos look better with padding on a white background. */
+.static-card-logo {
+  padding: 14px;
+  background: #fff;
+}
+.static-card-logo img {
+  object-fit: contain;
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width: 600px) {
+  .vid-swap,
+  .static-card {
+    max-width: 160px;
+  }
+}
