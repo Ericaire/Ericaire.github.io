@@ -134,6 +134,12 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+/* CVPR Highlight badge (top 3% papers): a small red mark next to the venue. */
+span.cvpr-highlight {
+  color: #c0392b;
+  font-weight: 700;
+}
+
 .colored-box {
     color: black;
     padding: 20px;
