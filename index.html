@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Suzhe Xu</title>
+    <meta name="author" content="Suzhe Xu">
+    <meta name="description" content="Suzhe Xu — AI undergraduate at Huaqiao University, visiting researcher at Peking University, and multimodal research intern at Xiaohongshu Dots. Research in few-step generation, diffusion distillation, and world models. Applying for Fall 2027 PhD programs.">
+    <link rel="canonical" href="https://ericaire.github.io/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:820px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <!-- ============== Header ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr class="profile-row" style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Suzhe Xu
+                </p>
+                <p>
+                  I am a final-year undergraduate in Artificial Intelligence at <a href="https://www.hqu.edu.cn/">Huaqiao University</a>, expecting to graduate in June&nbsp;2027 (academic rank&nbsp;4/40, comprehensive rank&nbsp;1/40; National Scholarship recipient).
+                  Since June&nbsp;2025, I have been a visiting student and research assistant at <a href="https://www.pku.edu.cn/">Peking University</a>, advised by <a href="https://hesunpu.github.io/">He&nbsp;Sun</a> and <a href="https://wenzhengchen.github.io/">Wenzheng&nbsp;Chen</a>.
+                  I joined <strong>Xiaohongshu (RED), Dots</strong> as a Multimodal Research Intern in September&nbsp;2026. Previously, I was an Algorithm Research Intern at <strong>Kuaishou</strong> (January&ndash;June&nbsp;2026), working on WebCoding data and model training.
+                </p>
+                <p>
+                  My research focuses on <strong>efficient generative modeling</strong>: native few-step generation, diffusion distillation, video inverse problems, and streaming world models. I study how training objectives, model parameterization, and inference design affect generation quality and stability under limited computation.
+                </p>
+                <p>
+                  I am applying for <strong>PhD programs starting Fall&nbsp;2027</strong>.
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:ericxu0713@163.com">Email</a> &nbsp;/&nbsp;
+                  <a href="CV.pdf">CV (PDF)</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=8YMlxFEAAAAJ">Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/Ericaire">GitHub</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="Avatar.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="Avatar.png" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- ============== Research header ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  My work spans real-time video restoration, few-step language generation, and causal world models. Below are selected publications and manuscripts, followed by ongoing research.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- ============== Research entries ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <!-- ====== InstantViR (CVPR 2026 Highlight) ====== -->
+            <tr onmouseout="instantvir_stop()" onmouseover="instantvir_start()" bgcolor="#ffffd0">
+              <td style="padding:16px;width:25%;vertical-align:top">
+                <div class="vid-swap" id="instantvir_card">
+                  <video id="instantvir_before" class="vid-swap-base"
+                         src="measurement_014.mp4"
+                         autoplay loop muted playsinline preload="auto"></video>
+                  <video id="instantvir_after"  class="vid-swap-over"
+                         src="reconstructed_014.mp4"
+                         autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <script type="text/javascript">
+                  (function() {
+                    var before = document.getElementById('instantvir_before');
+                    var after  = document.getElementById('instantvir_after');
+
+                    // Keep the two videos time-aligned, even if browsers throttle them.
+                    function syncTime() {
+                      try {
+                        if (Math.abs(before.currentTime - after.currentTime) > 0.05) {
+                          after.currentTime = before.currentTime;
+                        }
+                      } catch (e) {}
+                    }
+                    before.addEventListener('timeupdate', syncTime);
+
+                    window.instantvir_start = function() {
+                      after.style.opacity = "1";
+                      // Snap to the same time the moment hover begins.
+                      try { after.currentTime = before.currentTime; } catch (e) {}
+                    };
+                    window.instantvir_stop = function() {
+                      after.style.opacity = "0";
+                    };
+                    window.instantvir_stop();
+                  })();
+                </script>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <a href="https://arxiv.org/abs/2511.14208">
+                  <span class="papertitle">InstantViR: Real-Time Video Inverse Problem Solver with Distilled Diffusion Prior</span>
+                </a>
+                <br>
+                Weimin Bai*,
+                <strong>Suzhe Xu</strong>*,
+                Yiwei Ren,
+                Jinhua Hao,
+                Ming Sun,
+                <a href="https://wenzhengchen.github.io/">Wenzheng Chen</a>,
+                <a href="https://hesunpu.github.io/">He Sun</a>
+                <br>
+                <em>CVPR</em>, 2026 &nbsp; <span class="cvpr-highlight">Highlight (top 3%)</span>
+                <br>
+                <a href="https://arxiv.org/abs/2511.14208">arXiv</a> /
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Bai_InstantViR_Real-Time_Video_Inverse_Problem_Solver_with_Distilled_Diffusion_Prior_CVPR_2026_paper.html">Paper</a> /
+                <a href="https://ai4scientificimaging.org/instantvir">Project</a> /
+                <a href="https://cvpr.thecvf.com/virtual/2026/poster/37756">Presentation</a>
+                <p></p>
+                <p>
+                  We distill a video diffusion prior into a causal autoregressive student for <strong>one-step</strong> video restoration, without external paired clean/degraded training data or iterative test-time optimization. LeanVAE integration enables <strong>real-time</strong> streaming inpainting, deblurring, and super-resolution, with up to <strong>100&times;</strong> speedup over iterative solvers. I co-led method development, implementation, and experiments, and presented the work at CVPR.
+                  <br>
+                  <em>(Hover the clip to see measurement &rarr; reconstruction.)</em>
+                </p>
+              </td>
+            </tr>
+
+            <!-- ====== InstantViR++ (submitted to IEEE TMM) ====== -->
+            <tr>
+              <td style="padding:16px;width:25%;vertical-align:top">
+                <div class="static-card">
+                  <img src="pp-teaser.png" alt="InstantViR++ research overview" loading="lazy">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <span class="papertitle">InstantViR++: Improved Posterior Distillation for Real-Time Video Inverse Problem Solving</span>
+                <br>
+                <strong>Suzhe Xu</strong>,
+                Weimin Bai,
+                Jinhua Hao,
+                Ming Sun,
+                <a href="https://wenzhengchen.github.io/">Wenzheng Chen</a>,
+                <a href="https://hesunpu.github.io/">He Sun</a>
+                <br>
+                <em>Submitted to IEEE Transactions on Multimedia</em>, 2026
+                <p></p>
+                <p>
+                  My first-author follow-up studies <strong>cross-VAE posterior distillation</strong> and the balance between measurement consistency and generative supervision. Bidirectional latent conversion queries the frozen teacher and returns predictions to student coordinates; a stop-gradient surrogate supplies the student-space update. Controlled comparisons investigate perceptual and temporal behavior, alongside cyclic measurement-consistency weighting.
+                </p>
+              </td>
+            </tr>
+
+            <!-- ====== KAT-Coder-V2 ====== -->
+            <tr>
+              <td style="padding:16px;width:25%;vertical-align:top">
+                <div class="static-card static-card-logo">
+                  <img src="KATLogo.webp" alt="KAT-Coder-V2 logo">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <a href="https://arxiv.org/abs/2603.27703">
+                  <span class="papertitle">KAT-Coder-V2 Technical Report</span>
+                </a>
+                <br>
+                Fengxiang Li, ...,
+                <strong>Suzhe Xu</strong>, ...,
+                Ming Sun,
+                Lin Ye,
+                Bin Chen
+                <br>
+                <em>Technical Report</em>, Kuaishou Technology, 2026
+                <br>
+                <a href="https://arxiv.org/abs/2603.27703">arXiv</a>
+                <p></p>
+                <p>
+                  I contributed to <strong>WebCoding data curation and continued pretraining</strong>. I developed functional verification with LLM-generated tests and browser agents, curating <strong>10k+</strong> web-tool/game SFT examples. I also built an Issue&ndash;PR to FIM/unified-diff pipeline spanning <strong>3,600+ repositories</strong> and <strong>187,858 examples</strong>, and trained/evaluated Qwen3.5-35B-A3B at 64K context using Megatron-Bridge on <strong>32 H800 GPUs</strong>.
+                </p>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <!-- ============== Ongoing research ============== -->
+          <section class="research-updates" aria-labelledby="ongoing-title">
+            <h2 id="ongoing-title">Ongoing Research</h2>
+            <h3>Xiaohongshu (RED), Dots <span class="period">Sep. 2026&ndash;present</span></h3>
+            <p><strong>Native few-step language generation.</strong> I establish FLM cross-entropy/MSE baselines and adapt MeanFlow and simplified consistency training. Using 1/2/4-step generation, Gen PPL, MAUVE, repetition rates, and samples, I study the gap between training objectives and generation quality, and the trade-offs among quality, diversity, and computation.</p>
+            <p><strong>Distribution-matching distillation.</strong> I investigate brightness degradation and structural loss in JiT-based image distillation. Controlled experiments with exact finite-support scores, direct pixel optimization, and generator updates distinguish score-estimation, optimization, and parameterization effects.</p>
+            <h3>Peking University: Streaming World Models <span class="period">Ongoing</span></h3>
+            <p>In an industry-collaborative research project, I develop four-step block-autoregressive world models for driving videos, with clean KV caching, self-forcing rollouts, and multi-view training. I also build cross-model post-training and evaluation prototypes covering counterfactual/zero-action data, action&ndash;video consistency, causality, and open-loop rollouts.</p>
+          </section>
+
+          <!-- ============== Misc ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Miscellaneous</h2>
+                <p>
+                  I speak Mandarin, English (IELTS&nbsp;7.5), and intermediate French (CEFR&nbsp;B1, ongoing). Earlier in my undergrad I worked with <a href="https://faculty.hqu.edu.cn/PJL/en/index.htm">Prof.&nbsp;Jialin&nbsp;Peng</a> at Huaqiao University on multimodal medical image segmentation and SAM adaptation. I also led a CUMCM-winning team (provincial First Prize) and was an Outstanding Camper at the Datawhale &middot; Alibaba Cloud Tianchi AI Summer Camp.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- ============== Footer ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  Last updated: September 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
+</html>
