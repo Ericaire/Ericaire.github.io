@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>徐苏哲 | Suzhe Xu</title>
+    <meta name="author" content="Suzhe Xu">
+    <meta name="description" content="徐苏哲，华侨大学人工智能专业本科生、北京大学访问学生与科研助理。研究少步生成、扩散蒸馏、视频逆问题与因果世界模型。曾在小红书 Dots Studio 和快手实习，正在申请 2027 年秋季入学的研究生项目。">
+    <link rel="canonical" href="https://ericaire.github.io/zh.html">
+    <link rel="alternate" hreflang="en" href="https://ericaire.github.io/">
+    <link rel="alternate" hreflang="zh-CN" href="https://ericaire.github.io/zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://ericaire.github.io/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css?v=d4026a24f23f">
+  </head>
+
+  <body>
+    <div class="page-toolbar">
+      <nav class="language-switch" aria-label="语言切换">
+        <a href="./" lang="en" hreflang="en">English</a>
+        <a href="zh.html" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a>
+      </nav>
+    </div>
+    <table style="width:100%;max-width:820px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <!-- ============== Header ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr class="profile-row" style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  徐苏哲（Suzhe Xu）
+                </p>
+                <p>
+                  我是<a href="https://www.hqu.edu.cn/">华侨大学</a>人工智能专业的大四本科生，预计于 2027 年 6 月毕业。
+                  自 2025 年 6 月起，我在<a href="https://www.pku.edu.cn/">北京大学</a>担任访问学生与科研助理，在 <a href="https://hesunpu.github.io/">He&nbsp;Sun</a> 和 <a href="https://wenzhengchen.github.io/">Wenzheng&nbsp;Chen</a> 的指导下开展研究。
+                  我曾在<strong>小红书（RED）· Dots Studio</strong>和<strong>快手</strong>从事科研实习。
+                </p>
+                <p>
+                  我的研究聚焦于<strong>高效生成建模</strong>，包括少步生成、扩散蒸馏、视频逆问题和因果世界模型。我关注训练目标与推理设计如何影响生成质量、时序一致性和计算效率。
+                </p>
+                <p>
+                  我正在申请<strong>2027 年秋季入学的研究生项目</strong>。
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:ericxu0713@163.com">邮箱</a> &nbsp;/&nbsp;
+                  <a href="CV.pdf?v=dfac1b1a8d7d">简历（英文 PDF）</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=8YMlxFEAAAAJ">谷歌学术</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/Ericaire">GitHub</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="Avatar.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="个人照片" src="Avatar.png" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- ============== Research header ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>代表论文与研究成果</h2>
+                <p>
+                  我的工作涵盖实时视频修复、少步语言生成与因果世界模型。以下列出代表论文与稿件，随后介绍在研项目。
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- ============== Research entries ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <!-- ====== InstantViR (CVPR 2026 Highlight) ====== -->
+            <tr onmouseout="instantvir_stop()" onmouseover="instantvir_start()" bgcolor="#ffffd0">
+              <td style="padding:16px;width:25%;vertical-align:top">
+                <div class="vid-swap" id="instantvir_card">
+                  <video id="instantvir_before" class="vid-swap-base"
+                         src="measurement_014.mp4"
+                         autoplay loop muted playsinline preload="auto"></video>
+                  <video id="instantvir_after"  class="vid-swap-over"
+                         src="reconstructed_014.mp4"
+                         autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <script type="text/javascript">
+                  (function() {
+                    var before = document.getElementById('instantvir_before');
+                    var after  = document.getElementById('instantvir_after');
+
+                    // Keep the two videos time-aligned, even if browsers throttle them.
+                    function syncTime() {
+                      try {
+                        if (Math.abs(before.currentTime - after.currentTime) > 0.05) {
+                          after.currentTime = before.currentTime;
+                        }
+                      } catch (e) {}
+                    }
+                    before.addEventListener('timeupdate', syncTime);
+
+                    window.instantvir_start = function() {
+                      after.style.opacity = "1";
+                      // Snap to the same time the moment hover begins.
+                      try { after.currentTime = before.currentTime; } catch (e) {}
+                    };
+                    window.instantvir_stop = function() {
+                      after.style.opacity = "0";
+                    };
+                    window.instantvir_stop();
+                  })();
+                </script>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <a href="https://arxiv.org/abs/2511.14208">
+                  <span class="papertitle">InstantViR: Real-Time Video Inverse Problem Solver with Distilled Diffusion Prior</span>
+                </a>
+                <br>
+                Weimin Bai*,
+                <strong>Suzhe Xu</strong>*,
+                Yiwei Ren,
+                Jinhua Hao,
+                Ming Sun,
+                <a href="https://wenzhengchen.github.io/">Wenzheng Chen</a>,
+                <a href="https://hesunpu.github.io/">He Sun</a>
+                <br>
+                <em>CVPR</em>, 2026 &nbsp; <span class="cvpr-highlight">Highlight（前 3%）</span>
+                <br>
+                <span class="contribution-note">* 同等贡献。</span>
+                <br>
+                <a href="https://arxiv.org/abs/2511.14208">arXiv</a> /
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Bai_InstantViR_Real-Time_Video_Inverse_Problem_Solver_with_Distilled_Diffusion_Prior_CVPR_2026_paper.html">论文</a> /
+                <a href="https://ai4scientificimaging.org/instantvir">项目主页</a> /
+                <a href="https://cvpr.thecvf.com/virtual/2026/poster/37756">会议报告</a>
+                <p></p>
+                <p>
+                  我们将视频扩散先验蒸馏为因果自回归学生模型，实现<strong>单步</strong>视频修复，无需外部成对干净／退化训练数据，也无需测试时迭代优化。结合 LeanVAE，系统支持<strong>实时</strong>流式视频补全、去模糊与超分辨率，相较迭代式求解器最高加速 <strong>100&times;</strong>。我共同负责方法设计、实现与实验，并在 CVPR 会议上报告了这项工作。
+                  <br>
+                  <em>（将鼠标移至视频上，可对比退化观测与重建结果。）</em>
+                </p>
+              </td>
+            </tr>
+
+            <!-- ====== InstantViR++ (submitted to IEEE TMM) ====== -->
+            <tr>
+              <td style="padding:16px;width:25%;vertical-align:top">
+                <div class="static-card">
+                  <a href="pp-teaser.png?v=20260924" target="_blank" rel="noopener" title="查看大图"><img src="pp-teaser.png?v=20260924" alt="InstantViR++ 修复结果与质量—计算成本对比" loading="lazy"></a>
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <span class="papertitle">InstantViR++: Improved Posterior Distillation for Real-Time Video Inverse Problem Solving</span>
+                <br>
+                <strong>Suzhe Xu</strong>*,
+                Weimin Bai*,
+                Jinhua Hao,
+                Ming Sun,
+                <a href="https://wenzhengchen.github.io/">Wenzheng Chen</a>,
+                <a href="https://hesunpu.github.io/">He Sun</a>
+                <br>
+                <em>已投稿至 IEEE Transactions on Multimedia</em>，2026<br>
+                <span class="contribution-note">* 同等贡献。</span>
+                <p></p>
+                <p>
+                  我研究<strong>跨 VAE 后验蒸馏</strong>，以及测量一致性与生成监督之间的平衡。通过双向隐变量转换查询冻结的教师模型，并将预测映射回学生坐标；利用停止梯度的替代形式，提供学生隐空间中的更新信号。我结合循环测量一致性加权，通过受控对照研究感知质量与时序表现。
+                </p>
+              </td>
+            </tr>
+
+            <!-- ====== KAT-Coder-V2 ====== -->
+            <tr>
+              <td style="padding:16px;width:25%;vertical-align:top">
+                <div class="static-card static-card-logo">
+                  <img src="KATLogo.webp" alt="KAT-Coder-V2 标志">
+                </div>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <a href="https://arxiv.org/abs/2603.27703">
+                  <span class="papertitle">KAT-Coder-V2 Technical Report</span>
+                </a>
+                <br>
+                Fengxiang Li, ...,
+                <strong>Suzhe Xu</strong>, ...,
+                Ming Sun,
+                Lin Ye,
+                Bin Chen
+                <br>
+                <em>技术报告</em>，快手，2026
+                <br>
+                <a href="https://arxiv.org/abs/2603.27703">arXiv</a>
+                <p></p>
+                <p>
+                  我参与了<strong>WebCoding 数据构建与持续预训练</strong>。我结合大语言模型生成的测试与浏览器智能体开展功能验证，整理了 <strong>10k+</strong> 条网页工具／游戏监督微调样本；还构建了从 Issue&ndash;PR 到 FIM／unified-diff 的数据流水线，覆盖 <strong>3,600+</strong> 个代码仓库和 <strong>187,858</strong> 条样本，并使用 Megatron-Bridge，在 <strong>32 张 H800 GPU</strong> 上完成 Qwen3.5-35B-A3B 的 64K 上下文训练与评测。
+                </p>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+          <!-- ============== Research in progress ============== -->
+          <section class="research-updates" aria-labelledby="ongoing-title">
+            <h2 id="ongoing-title">在研项目</h2>
+            <article>
+              <h3>Prometheus：面向自动驾驶的因果少步流式世界模型</h3>
+              <p class="project-meta">北京大学 &middot; 产学合作研究 &middot; 2026 年 6 月至今<br>
+                <em>暂定题名。论文撰写中，计划投稿 CVPR&nbsp;2027。</em></p>
+              <p>我研究面向驾驶视频的少步因果世界模型，已实现三视角训练流程，结合分块因果微调、<strong>四步因果一致性蒸馏</strong>与 <strong>Self-Forcing 分布匹配蒸馏</strong>，并实现同步多视角展开与干净历史 KV 缓存。实现覆盖单视角、三视角和五视角配置；目前五视角版本正在开展<strong>101 帧序列</strong>的因果蒸馏。</p>
+            </article>
+            <article>
+              <h3>多智能体世界模型后训练与评测</h3>
+              <p class="project-meta">北京大学 &middot; 在研<br>
+                <em>项目进行中，计划投稿 CVPR&nbsp;2027。</em></p>
+              <p>我研究支持各智能体独立动作条件与原生双视角生成的多智能体世界模型，完成了 Cosmos3-Edge 的适配，以及<strong>从 93 帧扩展至 189 帧的课程训练</strong>。通过对齐帧率、预测时域和采样预算的对照实验，我研究时序一致性，以及训练损失与视觉保真度之间的偏差。后续计划研究跨底座蒸馏，以实现因果少步生成。</p>
+            </article>
+          </section>
+
+          <!-- ============== Research internships ============== -->
+          <section class="research-updates" aria-labelledby="internships-title">
+            <h2 id="internships-title">科研实习</h2>
+            <article>
+              <h3>小红书（RED）· Dots Studio <span class="period">2026.08&ndash;2026.10</span></h3>
+              <p class="role">多模态算法研究实习生</p>
+              <p><strong>原生少步语言生成。</strong>我搭建了 FLM 基线，并适配 MeanFlow 与简化一致性训练，开展<strong>1/2/4 步生成</strong>实验，研究训练目标与生成质量之间的偏差，以及质量、多样性和计算成本之间的权衡。</p>
+              <p><strong>分布匹配蒸馏。</strong>我研究分数差处理与辅助分数估计如何影响单步扩散蒸馏，并通过受控的 CIFAR-10 实验，评估样本质量、多样性与训练稳定性。</p>
+            </article>
+            <article>
+              <h3>快手 <span class="period">2026.01&ndash;2026.06</span></h3>
+              <p class="role">算法研究实习生 · 前沿 Agent 算法</p>
+              <p>我构建了经过功能验证的 WebCoding 数据流水线，参与监督微调与长上下文持续预训练，并为 <a href="https://arxiv.org/abs/2603.27703">KAT-Coder-V2 Technical Report</a> 作出贡献。实习期间，我还在快手支持下，与可灵 AI 和北京大学合作开展了 InstantViR++ 研究。</p>
+            </article>
+          </section>
+
+          <!-- ============== Misc ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>荣誉与其他经历</h2>
+                <ul class="honors-list">
+                  <li><strong>国家奖学金</strong>，中国教育部，2024 年。</li>
+                  <li><strong>大学生创新创业训练计划国家级项目</strong>，已获评<strong>优秀结项</strong>。</li>
+                  <li><strong>全国大学生数学建模竞赛省级一等奖</strong>；担任团队负责人。</li>
+                  <li><strong>优秀营员</strong>，Datawhale &middot; 阿里云天池 AI 夏令营。</li>
+                </ul>
+                <p>
+                  我使用普通话、英语（雅思&nbsp;7.5）和法语（约 CEFR&nbsp;B1，自评）。本科早期，我曾与华侨大学的 <a href="https://faculty.hqu.edu.cn/PJL/en/index.htm">Jialin&nbsp;Peng 教授</a>合作，研究多模态医学图像分割与 SAM 适配。
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- ============== Footer ============== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  最近更新：2026 年 10 月 16 日。页面模板基于 <a href="https://jonbarron.info/">Jon Barron</a> 的主页。
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </body>
+</html>
