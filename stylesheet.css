@@ -221,6 +221,11 @@ span.cvpr-highlight {
 .research-updates { padding: 16px; }
 .research-updates h3 { font-size: 16px; margin: 20px 0 8px; }
 .research-updates p { line-height: 1.55; }
+.research-updates article + article { margin-top: 24px; }
+.research-updates .project-meta { color: #666; font-size: 13px; margin: 6px 0 10px; }
+.research-updates .role { color: #555; font-style: italic; margin: 4px 0 10px; }
+.honors-list { padding-left: 20px; line-height: 1.55; }
+.honors-list li + li { margin-top: 8px; }
 .period { color: #666; font-size: 13px; font-weight: normal; white-space: nowrap; }
 @media (max-width: 600px) {
   .profile-row > td { display: block; width: auto !important; max-width: 100% !important; }

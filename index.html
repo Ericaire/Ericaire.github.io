@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Suzhe Xu</title>
     <meta name="author" content="Suzhe Xu">
-    <meta name="description" content="Suzhe Xu — AI undergraduate at Huaqiao University and visiting researcher at Peking University, with multimodal research internship experience at Xiaohongshu Dots (August–October 2026). Research in few-step generation, diffusion distillation, and world models. Applying for Fall 2027 PhD programs.">
+    <meta name="description" content="Suzhe Xu — AI undergraduate at Huaqiao University and visiting student/research assistant at Peking University. Research in few-step generation, diffusion distillation, video inverse problems, and causal world models. Former research intern at Xiaohongshu Dots Studio and Kuaishou. Applying for Fall 2027 PhD programs.">
     <link rel="canonical" href="https://ericaire.github.io/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -24,12 +24,12 @@
                   Suzhe Xu
                 </p>
                 <p>
-                  I am a final-year undergraduate in Artificial Intelligence at <a href="https://www.hqu.edu.cn/">Huaqiao University</a>, expecting to graduate in June&nbsp;2027 (academic rank&nbsp;4/40, comprehensive rank&nbsp;1/40; National Scholarship recipient).
+                  I am a final-year undergraduate in Artificial Intelligence at <a href="https://www.hqu.edu.cn/">Huaqiao University</a>, expecting to graduate in June&nbsp;2027.
                   Since June&nbsp;2025, I have been a visiting student and research assistant at <a href="https://www.pku.edu.cn/">Peking University</a>, advised by <a href="https://hesunpu.github.io/">He&nbsp;Sun</a> and <a href="https://wenzhengchen.github.io/">Wenzheng&nbsp;Chen</a>.
-                  From August to October&nbsp;2026, I worked as a Multimodal Research Intern at <strong>Xiaohongshu (RED), Dots</strong>. Previously, I was an Algorithm Research Intern at <strong>Kuaishou</strong> (January&ndash;June&nbsp;2026), working on WebCoding data and model training.
+                  I previously held research internships at <strong>Xiaohongshu (RED), Dots Studio</strong> and <strong>Kuaishou</strong>.
                 </p>
                 <p>
-                  My research focuses on <strong>efficient generative modeling</strong>: native few-step generation, diffusion distillation, video inverse problems, and streaming world models. I study how training objectives, model parameterization, and inference design affect generation quality and stability under limited computation.
+                  My research focuses on <strong>efficient generative modeling</strong>, including few-step generation, diffusion distillation, video inverse problems, and causal world models. I study how training objectives and inference design affect generation quality, temporal consistency, and computational efficiency.
                 </p>
                 <p>
                   I am applying for <strong>PhD programs starting Fall&nbsp;2027</strong>.
@@ -51,7 +51,7 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
+                <h2>Selected Publications and Manuscripts</h2>
                 <p>
                   My work spans real-time video restoration, few-step language generation, and causal world models. Below are selected publications and manuscripts, followed by ongoing research.
                 </p>
@@ -186,26 +186,52 @@
 
           </tbody></table>
 
-          <!-- ============== Ongoing research ============== -->
+          <!-- ============== Research in progress ============== -->
           <section class="research-updates" aria-labelledby="ongoing-title">
-            <h2 id="ongoing-title">Research Experience</h2>
-            <h3>Xiaohongshu (RED), Dots <span class="period">Aug.&ndash;Oct. 2026</span></h3>
-            <p><strong>Native few-step language generation.</strong> I established FLM cross-entropy/MSE baselines and adapted MeanFlow and simplified consistency training. Using 1/2/4-step generation, Gen PPL, MAUVE, repetition rates, and samples, I studied the gap between training objectives and generation quality, and the trade-offs among quality, diversity, and computation.</p>
-            <p><strong>Distribution-matching distillation.</strong> I studied how score-difference geometry and auxiliary score-network tracking affect one-step diffusion distillation. Building on Diff-Instruct, I investigated norm-preserving spectral transformations and rotation-based adaptations. Through controlled experiments on CIFAR-10, I examined their effects on generation quality and training stability, and whether their benefits are distinct from those of parameter-space optimization.</p>
-            <h3>Peking University: Streaming World Models <span class="period">Ongoing</span></h3>
-            <p>In an industry-collaborative research project, I develop four-step block-autoregressive world models for driving videos, with clean KV caching, self-forcing rollouts, and multi-view training.</p>
-            <h3>Peking University: Multi-Agent World Model Post-Training and Evaluation <span class="period">Ongoing</span></h3>
-            <p>I adapted Cosmos3-Edge for native dual-view, action-conditioned multi-agent generation, integrating independent action tokens and Gamma Simplex four-axis positional encoding to represent agent identity, time, and space. I completed staged training with a 93-to-189-frame curriculum on <strong>16 A100 GPUs across two nodes</strong>.</p>
-            <p>I established protocol-matched comparisons with the Gamma teacher by aligning frame rates, prediction horizons, and sampling budgets; I analyzed discrepancies between validation loss and visual fidelity, including persistent material and geometric errors.</p>
+            <h2 id="ongoing-title">Research in Progress</h2>
+            <article>
+              <h3>Prometheus: Causal Few-Step Streaming World Models for Autonomous Driving</h3>
+              <p class="project-meta">Peking University &middot; Industry-collaborative research &middot; Jun.&nbsp;2026&ndash;present<br>
+                <em>Working title. Manuscript in preparation; targeting submission to CVPR&nbsp;2027.</em></p>
+              <p>I develop few-step causal world models for driving videos. I implemented a three-view pipeline combining chunk-causal fine-tuning, <strong>four-step causal consistency distillation</strong>, and <strong>Self-Forcing distribution matching distillation</strong>, with synchronized multi-view rollouts and clean-history KV caching. The implementation covers single-, three-, and five-view configurations; current five-view work extends causal distillation to <strong>101-frame sequences</strong>.</p>
+            </article>
+            <article>
+              <h3>Multi-Agent World Model Post-Training and Evaluation</h3>
+              <p class="project-meta">Peking University &middot; Ongoing<br>
+                <em>Research in progress; targeting submission to CVPR&nbsp;2027.</em></p>
+              <p>I study multi-agent world models with independent per-agent action conditioning and native dual-view generation. I adapted Cosmos3-Edge and trained with a <strong>93-to-189-frame curriculum</strong>. Through comparisons under matched frame rates, prediction horizons, and sampling budgets, I examine temporal consistency and discrepancies between training loss and visual fidelity. Planned work investigates cross-backbone distillation toward causal few-step generation.</p>
+            </article>
+          </section>
+
+          <!-- ============== Research internships ============== -->
+          <section class="research-updates" aria-labelledby="internships-title">
+            <h2 id="internships-title">Research Internships</h2>
+            <article>
+              <h3>Xiaohongshu (RED), Dots Studio <span class="period">Aug.&ndash;Oct. 2026</span></h3>
+              <p class="role">Multimodal Research Intern</p>
+              <p><strong>Native few-step language generation.</strong> I established FLM baselines and adapted MeanFlow and simplified consistency training for <strong>1/2/4-step generation</strong>, studying the gap between training objectives and generation quality, and the trade-offs among quality, diversity, and computation.</p>
+              <p><strong>Distribution-matching distillation.</strong> I investigated how score-difference processing and auxiliary score estimation affect one-step diffusion distillation, using controlled CIFAR-10 experiments to assess sample quality, diversity, and training stability.</p>
+            </article>
+            <article>
+              <h3>Kuaishou <span class="period">Jan.&ndash;Jun. 2026</span></h3>
+              <p class="role">Algorithm Research Intern, Frontier Agent Algorithms</p>
+              <p>I built functionally verified WebCoding data pipelines and conducted supervised fine-tuning and long-context continued pretraining, contributing to the <a href="https://arxiv.org/abs/2603.27703">KAT-Coder-V2 Technical Report</a>. I also conducted InstantViR++ research with Kling AI and Peking University during this internship, supported by Kuaishou.</p>
+            </article>
           </section>
 
           <!-- ============== Misc ============== -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Miscellaneous</h2>
+                <h2>Honors and Other Activities</h2>
+                <ul class="honors-list">
+                  <li><strong>National Scholarship</strong>, Ministry of Education of China, 2024.</li>
+                  <li><strong>National-Level Project</strong>, Undergraduate Innovation and Entrepreneurship Training Program (China) &mdash; completed with an <strong>Excellent</strong> rating.</li>
+                  <li><strong>First Prize (Provincial Level)</strong>, China Undergraduate Mathematical Contest in Modeling (CUMCM); team lead.</li>
+                  <li><strong>Outstanding Camper</strong>, Datawhale &middot; Alibaba Cloud Tianchi AI Summer Camp.</li>
+                </ul>
                 <p>
-                  I speak Mandarin, English (IELTS&nbsp;7.5), and intermediate French (CEFR&nbsp;B1, ongoing). Earlier in my undergrad I worked with <a href="https://faculty.hqu.edu.cn/PJL/en/index.htm">Prof.&nbsp;Jialin&nbsp;Peng</a> at Huaqiao University on multimodal medical image segmentation and SAM adaptation. I also led a CUMCM-winning team (provincial First Prize) and was an Outstanding Camper at the Datawhale &middot; Alibaba Cloud Tianchi AI Summer Camp.
+                  I speak Mandarin, English (IELTS&nbsp;7.5), and intermediate French (approximately CEFR&nbsp;B1, self-assessed). Earlier in my undergrad I worked with <a href="https://faculty.hqu.edu.cn/PJL/en/index.htm">Prof.&nbsp;Jialin&nbsp;Peng</a> at Huaqiao University on multimodal medical image segmentation and SAM adaptation.
                 </p>
               </td>
             </tr>
@@ -217,7 +243,7 @@
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  Last updated: October 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
+                  Last updated: October 16, 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
                 </p>
               </td>
             </tr>
