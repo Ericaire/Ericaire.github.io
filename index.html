@@ -46,7 +46,7 @@
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:ericxu0713@163.com">Email</a> &nbsp;/&nbsp;
-                  <a href="CV.pdf?v=20261114">CV (PDF)</a> &nbsp;/&nbsp;
+                  <a href="CV.pdf?v=20261119">CV (PDF)</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=8YMlxFEAAAAJ">Scholar</a> &nbsp;/&nbsp;
                   <a href="https://github.com/Ericaire">GitHub</a>
                 </p>
@@ -185,7 +185,7 @@
                 <br>
                 <span class="contribution-note">* Equal contribution.</span>
                 <p>
-                  We introduce DriveForge, a framework for controllable multi-camera autoregressive driving video generation. I developed its <strong>causal distillation pipeline</strong>, adapting a 7B bidirectional model into a <strong>four-step autoregressive generator</strong> through chunk-causal fine-tuning, consistency distillation, and Self-Forcing DMD. The system generates <strong>five synchronized camera streams at 10&nbsp;Hz</strong> and 832&nbsp;&times;&nbsp;480 resolution per view on four NVIDIA A800 GPUs.
+                  We developed DriveForge for controllable multi-camera driving video generation. I built its <strong>causal distillation pipeline</strong> to turn a 7B bidirectional model into a four-step autoregressive generator. After chunk-causal fine-tuning and consistency distillation, I used Self-Forcing DMD to train the student to continue from its own predictions, including earlier mistakes. At four sampling steps per block, the final training stage reduced 16-frame FVD from 79.63 to 21.32. The system generates <strong>five synchronized camera streams at 10&nbsp;Hz</strong> at 832&nbsp;&times;&nbsp;480 per view on four NVIDIA A800 GPUs.
                 </p>
               </td>
             </tr>
@@ -237,19 +237,21 @@
             <article>
               <h3>DepthCore (AI startup) <span class="period">Oct.&nbsp;2026&ndash;present</span></h3>
               <p class="role">Research Intern &middot; Mentor: Wenzheng Chen</p>
-              <p>I develop compact stereo depth models through distillation from a <strong>1.84B-parameter foundation model</strong>. My work explores feature and cross-view relation distillation, teacher-layer selection, and staged adaptation. I also improved measured eight-GPU distillation training throughput by approximately <strong>4.5&times;</strong> through parallel decoding, prefetching, and shared caching.</p>
+              <p>I distilled a 1.84B-parameter stereo depth model into a <strong>34.4M-parameter student</strong> by aligning features and cross-view relationships. On one RTX PRO 5000 GPU, its median forward pass took <strong>4.71&nbsp;ms</strong> per 320&nbsp;&times;&nbsp;720 stereo pair. Starting from the same student checkpoint, I compared five disparity refiners and profiled two of them to measure the latency cost of improving depth accuracy.</p>
+              <p>Parallel decoding, prefetching, and shared caching improved measured eight-GPU distillation training throughput by approximately 4.5&times;. Our technical report on the stereo foundation model is in preparation.</p>
             </article>
             <article>
               <h3>Rednote (Xiaohongshu), Dots Studio <span class="period">Aug.&ndash;Oct. 2026</span></h3>
               <p class="role">Multimodal Research Intern &middot; Mentor: Weijian Luo</p>
-              <p><strong>Native few-step language generation.</strong> I established FLM baselines and adapted MeanFlow and simplified consistency training for <strong>1/2/4-step generation</strong>, studying the gap between training objectives and generation quality, and the trade-offs among quality, diversity, and computation.</p>
+              <p><strong>Native few-step language generation.</strong> I compared FLM baselines, MeanFlow, and simplified consistency training for <strong>1/2/4-step generation</strong>. After transferring weights between two models, I found that their denoising predictions closely matched on the same input, yet their outputs diverged over a full sampling run. I tested how self-conditioning and the sampling schedule affected that gap.</p>
               <p><strong>Distribution-matching distillation.</strong> I investigated how score-difference processing and auxiliary score estimation affect one-step diffusion distillation, using controlled CIFAR-10 experiments to assess sample quality, diversity, and training stability.</p>
             </article>
             <article>
               <h3>Kuaishou <span class="period">Jan.&ndash;Jun. 2026</span></h3>
               <p class="role">Algorithm Research Intern, Frontier Agent Algorithms &middot; Mentors: Han Zhang and Jinhua Hao</p>
               <p>I built functionally verified WebCoding data pipelines using LLM-generated tests, browser execution, and UI-agent verification, curating <strong>10k+ web-tool/game examples</strong> for supervised fine-tuning. I am a co-author of the <a href="https://arxiv.org/abs/2603.27703">KAT-Coder-V2 Technical Report</a>.</p>
-              <p>I also built an Issue&ndash;PR to FIM/unified-diff pipeline spanning <strong>3,600+ repositories</strong> and <strong>187,858 examples</strong>, and trained/evaluated Qwen3.5-35B-A3B at <strong>64K context</strong> using Megatron-Bridge. During this internship, I also conducted InstantViR++ research with Jinhua Hao (<strong>Kling AI</strong>) and Peking University, supported by Kuaishou.</p>
+              <p>I turned issue&ndash;pull request pairs from <strong>3,600+ repositories</strong> into 187,858 fill-in-the-middle and unified-diff examples for continued pretraining. I trained and evaluated Qwen3.5-35B-A3B at <strong>64K context</strong> using Megatron-Bridge. I later generated and validated another 116,684 examples in a separate batch.</p>
+              <p>During this internship, I also conducted InstantViR++ research with Jinhua Hao (<strong>Kling AI</strong>) and Peking University, supported by Kuaishou.</p>
             </article>
           </section>
 
@@ -277,7 +279,7 @@
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  Last updated: November 14, 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
+                  Last updated: November 19, 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
                 </p>
               </td>
             </tr>

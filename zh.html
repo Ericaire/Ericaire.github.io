@@ -46,7 +46,7 @@
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:ericxu0713@163.com">邮箱</a> &nbsp;/&nbsp;
-                  <a href="CV.pdf?v=20261114">简历（英文 PDF）</a> &nbsp;/&nbsp;
+                  <a href="CV.pdf?v=20261119">简历（英文 PDF）</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=8YMlxFEAAAAJ">谷歌学术</a> &nbsp;/&nbsp;
                   <a href="https://github.com/Ericaire">GitHub</a>
                 </p>
@@ -185,7 +185,7 @@
                 <br>
                 <span class="contribution-note">* 同等贡献。</span>
                 <p>
-                  DriveForge 是面向可控多相机驾驶视频生成的自回归世界模型框架。我负责<strong>因果蒸馏流程</strong>，将 7B 双向模型通过分块因果微调、一致性蒸馏与 Self-Forcing DMD 转化为<strong>四步自回归生成器</strong>。系统在四张 NVIDIA A800 GPU 上，以每视角 832&nbsp;&times;&nbsp;480 的分辨率，同步生成<strong>五路 10&nbsp;Hz 驾驶视频</strong>。
+                  DriveForge 用于可控的多相机驾驶视频生成。我负责<strong>因果蒸馏流程</strong>，将 7B 双向模型转化为四步自回归生成器。经过分块因果微调和一致性蒸馏后，我用 Self-Forcing DMD 训练学生模型，让它在先前预测出现误差时也能继续生成下一段。在每段均采样四步的条件下，最终训练阶段将 16 帧 FVD 从 79.63 降至 21.32。系统在四张 NVIDIA A800 GPU 上以每视角 832&nbsp;&times;&nbsp;480 的分辨率，同步生成<strong>五路 10&nbsp;Hz 驾驶视频</strong>。
                 </p>
               </td>
             </tr>
@@ -237,19 +237,21 @@
             <article>
               <h3>DepthCore（人工智能初创公司）<span class="period">2026.10&ndash;至今</span></h3>
               <p class="role">科研实习生 &middot; 导师：陈文拯</p>
-              <p>我研究从 <strong>1.84B 参数基础模型</strong>向紧凑立体深度模型的蒸馏，探索特征与跨视角关系蒸馏、教师层选择和分阶段适配。我还通过并行解码、预取与共享缓存，将实测八卡蒸馏训练吞吐提升约 <strong>4.5 倍</strong>。</p>
+              <p>我通过对齐师生模型的特征和跨视角关系，将 18.4 亿参数的双目深度模型蒸馏为<strong>3,440 万参数的学生模型</strong>。在单张 RTX PRO 5000 GPU 上，每对 320&nbsp;&times;&nbsp;720 双目图像的前向推理延迟中位数为 <strong>4.71&nbsp;ms</strong>。从同一学生模型检查点出发，我比较了五种视差细化模块，并实测其中两种的推理延迟，以衡量改善深度精度所需的时间开销。</p>
+              <p>在训练端，我通过并行解码、预取和共享缓存，将实测八卡蒸馏训练吞吐提升至原来的约 4.5 倍。团队正在准备双目深度基础模型的技术报告。</p>
             </article>
             <article>
               <h3>小红书（Rednote）· Dots Studio <span class="period">2026.08&ndash;2026.10</span></h3>
               <p class="role">多模态算法研究实习生 &middot; 导师：Weijian Luo</p>
-              <p><strong>原生少步语言生成。</strong>我搭建了 FLM 基线，并适配 MeanFlow 与简化一致性训练，开展<strong>1/2/4 步生成</strong>实验，研究训练目标与生成质量之间的偏差，以及质量、多样性和计算成本之间的权衡。</p>
+              <p><strong>原生少步语言生成。</strong>我比较了 FLM 基线、MeanFlow 与简化一致性训练在<strong>单步、两步和四步生成</strong>下的表现。迁移权重后，两个模型对同一输入的单次去噪预测非常接近，但运行完整采样流程时，生成结果却出现了差异。我进一步检验了自条件与采样时间表对这一差异的影响。</p>
               <p><strong>分布匹配蒸馏。</strong>我研究分数差处理与辅助分数估计如何影响单步扩散蒸馏，并通过受控的 CIFAR-10 实验，评估样本质量、多样性与训练稳定性。</p>
             </article>
             <article>
               <h3>快手 <span class="period">2026.01&ndash;2026.06</span></h3>
               <p class="role">算法研究实习生 · 前沿 Agent 算法 &middot; 导师：Han Zhang、Jinhua Hao</p>
               <p>我结合大语言模型生成的测试、浏览器执行与 UI 智能体验证，构建经过功能验证的 WebCoding 数据流水线，整理了 <strong>10k+ 条网页工具／游戏样本</strong>用于监督微调。我是 <a href="https://arxiv.org/abs/2603.27703">KAT-Coder-V2 Technical Report</a> 的共同作者。</p>
-              <p>我还构建了从 Issue&ndash;PR 到 FIM／unified-diff 的数据流水线，覆盖 <strong>3,600+ 个代码仓库</strong>和 <strong>187,858 条样本</strong>，并使用 Megatron-Bridge 完成 Qwen3.5-35B-A3B 的 <strong>64K 上下文</strong>训练与评测。实习期间，我还在快手支持下，与 Jinhua Hao（<strong>可灵 AI</strong>）和北京大学合作开展了 InstantViR++ 研究。</p>
+              <p>我从 <strong>3,600 多个代码仓库</strong>的 issue 与 pull request 配对中构建了 187,858 条中间补全（FIM）和统一差异格式（unified diff）样本，用于持续预训练，并使用 Megatron-Bridge 完成了 Qwen3.5-35B-A3B 在 <strong>64K 上下文</strong>下的训练与评测。随后，我又生成并校验了第二批 116,684 条样本。</p>
+              <p>实习期间，我还在快手支持下，与 Jinhua Hao（<strong>可灵 AI</strong>）和北京大学合作开展了 InstantViR++ 研究。</p>
             </article>
           </section>
 
@@ -277,7 +279,7 @@
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  最近更新于 2026 年 11 月 14 日。页面模板基于 <a href="https://jonbarron.info/">Jon Barron</a> 的主页。
+                  最近更新于 2026 年 11 月 19 日。页面模板基于 <a href="https://jonbarron.info/">Jon Barron</a> 的主页。
                 </p>
               </td>
             </tr>
