@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Suzhe Xu</title>
     <meta name="author" content="Suzhe Xu">
-    <meta name="description" content="Suzhe Xu — visiting student/research assistant at Peking University, research intern at DepthCore, and AI undergraduate at Huaqiao University. Research in few-step generation, diffusion distillation, video inverse problems, causal world models, and efficient stereo depth estimation. Applying for Fall 2027 graduate programs.">
+    <meta name="description" content="Suzhe Xu, visiting research assistant at Peking University's Wangxuan Institute of Computer Technology and AI undergraduate at Huaqiao University. Research in efficient video restoration, multi-view generation, and few-step language generation. Applying for Fall 2027 graduate programs.">
     <link rel="canonical" href="https://ericaire.github.io/">
     <link rel="alternate" hreflang="en" href="https://ericaire.github.io/">
     <link rel="alternate" hreflang="zh-CN" href="https://ericaire.github.io/zh.html">
@@ -33,20 +33,20 @@
                   Suzhe Xu
                 </p>
                 <p>
-                  I am a visiting student and research assistant at <a href="https://www.pku.edu.cn/">Peking University</a>, advised by <a href="https://wenzhengchen.github.io/">Wenzheng&nbsp;Chen</a> and <a href="https://hesunpu.github.io/">He&nbsp;Sun</a>.
-                  I also work as a research intern at <strong>DepthCore</strong>, an AI startup, on foundation-model distillation for efficient stereo depth estimation.
-                  I am completing my undergraduate degree in Artificial Intelligence at <a href="https://www.hqu.edu.cn/">Huaqiao University</a> and expect to graduate in June&nbsp;2027.
-                  Previously, I held research internships at <strong>Rednote (Xiaohongshu), Dots Studio</strong> and <strong>Kuaishou</strong>.
+                  I am a visiting research assistant at <a href="https://www.pku.edu.cn/">Peking University</a>’s Wangxuan Institute of Computer Technology, where I work with <a href="https://wenzhengchen.github.io/">Wenzheng&nbsp;Chen</a> and <a href="https://hesunpu.github.io/">He&nbsp;Sun</a>.
+                  I am pursuing a B.Eng. in Artificial Intelligence at <a href="https://www.hqu.edu.cn/">Huaqiao University</a> and expect to graduate in June&nbsp;2027.
+                  I also work on efficient stereo depth estimation as a research intern at <strong>DepthCore</strong>.
+                  Previously, I held research internships at <strong>Dots Studio at Rednote (Xiaohongshu)</strong> and at <strong>Kuaishou</strong>.
                 </p>
                 <p>
-                  My research focuses on <strong>efficient generative modeling</strong>, including few-step generation, diffusion distillation, video inverse problems, and causal world models. I study how training objectives and inference design affect generation quality, temporal consistency, and computational efficiency.
+                  I study <strong>efficient generative modeling</strong>. My recent work asks how diffusion models can restore video or generate multiple camera views in just a few steps while preserving temporal consistency. I also study training objectives for native few-step language generation.
                 </p>
                 <p>
                   I am applying for <strong>graduate programs starting Fall&nbsp;2027</strong>.
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:ericxu0713@163.com">Email</a> &nbsp;/&nbsp;
-                  <a href="CV.pdf?v=20261119">CV (PDF)</a> &nbsp;/&nbsp;
+                  <a href="CV.pdf?v=20261120">CV (PDF)</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=8YMlxFEAAAAJ">Scholar</a> &nbsp;/&nbsp;
                   <a href="https://github.com/Ericaire">GitHub</a>
                 </p>
@@ -133,7 +133,7 @@
                 <a href="https://cvpr.thecvf.com/virtual/2026/poster/37756">Presentation</a>
                 <p></p>
                 <p>
-                  We distill a video diffusion prior into a causal autoregressive student for <strong>one-step</strong> video restoration, without external paired clean/degraded training data or iterative test-time optimization. LeanVAE integration enables <strong>real-time</strong> streaming inpainting, deblurring, and super-resolution, with up to <strong>100&times;</strong> speedup over iterative solvers. I co-led method development, implementation, and experiments, and presented the work at CVPR.
+                  We distill a video diffusion prior into a causal autoregressive student for <strong>one-step</strong> video inpainting, deblurring, and super-resolution, without external paired clean/degraded training data or iterative test-time optimization. With LeanVAE, InstantViR runs at <strong>over 35 FPS</strong> and achieves up to a <strong>100&times;</strong> speedup over iterative solvers. I co-led method development, implementation, and experiments, and presented the work at CVPR.
                   <br>
                   <em>(Hover the clip to see measurement &rarr; reconstruction.)</em>
                 </p>
@@ -238,7 +238,7 @@
               <h3>DepthCore (AI startup) <span class="period">Oct.&nbsp;2026&ndash;present</span></h3>
               <p class="role">Research Intern &middot; Mentor: Wenzheng Chen</p>
               <p>I distilled a 1.84B-parameter stereo depth model into a <strong>34.4M-parameter student</strong> by aligning features and cross-view relationships. On one RTX PRO 5000 GPU, its median forward pass took <strong>4.71&nbsp;ms</strong> per 320&nbsp;&times;&nbsp;720 stereo pair. Starting from the same student checkpoint, I compared five disparity refiners and profiled two of them to measure the latency cost of improving depth accuracy.</p>
-              <p>Parallel decoding, prefetching, and shared caching improved measured eight-GPU distillation training throughput by approximately 4.5&times;. Our technical report on the stereo foundation model is in preparation.</p>
+              <p>The training pipeline sampled from 23.1 million synthetic stereo pairs. Parallel decoding, prefetching, and shared caching improved measured eight-GPU distillation training throughput by approximately 4.5&times;. Our technical report on the stereo foundation model is in preparation.</p>
             </article>
             <article>
               <h3>Rednote (Xiaohongshu), Dots Studio <span class="period">Aug.&ndash;Oct. 2026</span></h3>
@@ -279,7 +279,7 @@
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  Last updated: November 19, 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
+                  Last updated: November 20, 2026. Template courtesy of <a href="https://jonbarron.info/">Jon Barron</a>.
                 </p>
               </td>
             </tr>

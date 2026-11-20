@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>徐苏哲 | Suzhe Xu</title>
     <meta name="author" content="Suzhe Xu">
-    <meta name="description" content="徐苏哲，北京大学访问学生与科研助理、DepthCore 科研实习生、华侨大学人工智能专业本科生。研究少步生成、扩散蒸馏、视频逆问题、因果世界模型与高效立体深度估计。正在申请 2027 年秋季入学的研究生项目。">
+    <meta name="description" content="徐苏哲，北京大学王选计算机研究所访问科研助理、华侨大学人工智能专业本科生。研究高效视频复原、多视角视频生成和少步语言生成。正在申请 2027 年秋季入学的研究生项目。">
     <link rel="canonical" href="https://ericaire.github.io/zh.html">
     <link rel="alternate" hreflang="en" href="https://ericaire.github.io/">
     <link rel="alternate" hreflang="zh-CN" href="https://ericaire.github.io/zh.html">
@@ -33,20 +33,19 @@
                   徐苏哲（Suzhe Xu）
                 </p>
                 <p>
-                  我在<a href="https://www.pku.edu.cn/">北京大学</a>担任访问学生与科研助理，在<a href="https://wenzhengchen.github.io/">陈文拯</a>和<a href="https://hesunpu.github.io/">孙赫</a>的指导下开展研究。
-                  同时，我在人工智能初创公司 <strong>DepthCore</strong> 从事科研实习，研究面向高效立体深度估计的基础模型蒸馏。
-                  我就读于<a href="https://www.hqu.edu.cn/">华侨大学</a>人工智能专业，预计于 2027 年 6 月本科毕业。
-                  此前，我曾在<strong>小红书（Rednote）· Dots Studio</strong>和<strong>快手</strong>从事科研实习。
+                  我在<a href="https://www.pku.edu.cn/">北京大学</a>王选计算机研究所担任访问科研助理，在<a href="https://wenzhengchen.github.io/">陈文拯</a>和<a href="https://hesunpu.github.io/">孙赫</a>的指导下开展研究。
+                  我就读于<a href="https://www.hqu.edu.cn/">华侨大学</a>人工智能专业，预计于 2027 年 6 月获工学学士学位。
+                  同时，我在 <strong>DepthCore</strong> 从事高效双目深度估计研究，此前曾在<strong>小红书 Dots Studio</strong> 和<strong>快手</strong>担任科研实习生。
                 </p>
                 <p>
-                  我的研究聚焦于<strong>高效生成建模</strong>，包括少步生成、扩散蒸馏、视频逆问题和因果世界模型。我关注训练目标与推理设计如何影响生成质量、时序一致性和计算效率。
+                  我研究<strong>高效生成模型</strong>。近期工作关注如何用少量推理步骤完成视频复原或多视角视频生成，同时保持前后帧的一致性。我也研究适用于原生少步语言生成的训练目标。
                 </p>
                 <p>
                   我正在申请<strong>2027 年秋季入学的研究生项目</strong>。
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:ericxu0713@163.com">邮箱</a> &nbsp;/&nbsp;
-                  <a href="CV.pdf?v=20261119">简历（英文 PDF）</a> &nbsp;/&nbsp;
+                  <a href="CV.pdf?v=20261120">简历（英文 PDF）</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=8YMlxFEAAAAJ">谷歌学术</a> &nbsp;/&nbsp;
                   <a href="https://github.com/Ericaire">GitHub</a>
                 </p>
@@ -133,7 +132,7 @@
                 <a href="https://cvpr.thecvf.com/virtual/2026/poster/37756">会议报告</a>
                 <p></p>
                 <p>
-                  我们将视频扩散先验蒸馏为因果自回归学生模型，实现<strong>单步</strong>视频修复，无需外部成对干净／退化训练数据，也无需测试时迭代优化。结合 LeanVAE，系统支持<strong>实时</strong>流式视频补全、去模糊与超分辨率，相较迭代式求解器最高加速 <strong>100&times;</strong>。我共同负责方法设计、实现与实验，并在 CVPR 会议上报告了这项工作。
+                  我们将视频扩散先验蒸馏为因果自回归学生模型，用<strong>单步</strong>推理完成视频补全、去模糊与超分辨率，无需外部成对的干净与退化训练视频，也无需在测试时迭代优化。结合 LeanVAE，InstantViR 的处理速度<strong>超过 35 FPS</strong>，相较迭代式求解器最高加速 <strong>100 倍</strong>。我共同负责方法设计、实现与实验，并在 CVPR 会议上报告了这项工作。
                   <br>
                   <em>（将鼠标移至视频上，可对比退化观测与重建结果。）</em>
                 </p>
@@ -238,7 +237,7 @@
               <h3>DepthCore（人工智能初创公司）<span class="period">2026.10&ndash;至今</span></h3>
               <p class="role">科研实习生 &middot; 导师：陈文拯</p>
               <p>我通过对齐师生模型的特征和跨视角关系，将 18.4 亿参数的双目深度模型蒸馏为<strong>3,440 万参数的学生模型</strong>。在单张 RTX PRO 5000 GPU 上，每对 320&nbsp;&times;&nbsp;720 双目图像的前向推理延迟中位数为 <strong>4.71&nbsp;ms</strong>。从同一学生模型检查点出发，我比较了五种视差细化模块，并实测其中两种的推理延迟，以衡量改善深度精度所需的时间开销。</p>
-              <p>在训练端，我通过并行解码、预取和共享缓存，将实测八卡蒸馏训练吞吐提升至原来的约 4.5 倍。团队正在准备双目深度基础模型的技术报告。</p>
+              <p>训练数据从 2,310 万对合成双目图像中采样。我通过并行解码、预取和共享缓存，将实测八卡蒸馏训练吞吐提升至原来的约 4.5 倍。团队正在准备双目深度基础模型的技术报告。</p>
             </article>
             <article>
               <h3>小红书（Rednote）· Dots Studio <span class="period">2026.08&ndash;2026.10</span></h3>
@@ -279,7 +278,7 @@
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  最近更新于 2026 年 11 月 19 日。页面模板基于 <a href="https://jonbarron.info/">Jon Barron</a> 的主页。
+                  最近更新于 2026 年 11 月 20 日。页面模板基于 <a href="https://jonbarron.info/">Jon Barron</a> 的主页。
                 </p>
               </td>
             </tr>
